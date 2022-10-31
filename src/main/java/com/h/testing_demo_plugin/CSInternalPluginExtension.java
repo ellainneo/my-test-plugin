@@ -3,7 +3,7 @@ package com.h.testing_demo_plugin;
 public class CSInternalPluginExtension {
 
     private String receiver = "Test User";
-    private String email = "test-user@test.com.test";
+    private String email = "test-user1@test.com.test";
 
     public void setReceiver(String receiver) {
         this.receiver = receiver;
