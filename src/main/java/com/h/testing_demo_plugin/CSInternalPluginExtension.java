@@ -1,6 +1,7 @@
 package com.h.testing_demo_plugin;
 
 public class CSInternalPluginExtension {
+
     private String receiver = "Test User";
     private String email = "test-user@test.com.test";
 

@@ -13,7 +13,9 @@ public class CsTestingDemoPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
-        project.getTasks().create("myTask", CSMyTask.class);
+        project.getTasks().create("showMessageTask", CSMyTask.class);
+        project.getExtensions().create("mainParameters", CSMainPluginExtension.class);
+        project.getExtensions().create("internalParameters", CSInternalPluginExtension.class);
     }
 
 }

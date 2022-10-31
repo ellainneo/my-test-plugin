@@ -12,6 +12,9 @@ plugins {
     id 'java-gradle-plugin'
 }
 
+group = 'com.h.testing_demo_plugin'
+version = '1.0'
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -24,6 +27,29 @@ dependencies {
 
 }
 
-group = 'com.h.testing_demo_plugin'
-version = '1.0'
+project.afterEvaluate {
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.h.testing_demo_plugin'
+            artifactId = 'eo-test-plugin'
+            version = '1.0'
 
+            from components.java
+
+            pom {
+                name = "pom.xml"
+                description = 'Test Plugin Description'
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+            }
+        }
+
+        }
+    }
+}
